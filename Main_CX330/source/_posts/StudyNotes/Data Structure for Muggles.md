@@ -657,8 +657,6 @@ Tree is an data structure that looks like a genealogy, so there's a lot of terms
     -   maximum level of any node in the tree
 -   Leaf (or Terminal)
     -   nodes having degree zeros
--   Internal node
-    -   not leaf & not root
 -   Children
     -   roots of subtrees of a node X
 -   Parent
@@ -693,11 +691,11 @@ This is an picture of a binary tree.
 
 ## Full Binary Trees & Perfect Binary Trees
 
-- Full Binary Tree
-  - A full binary tree is a binary tree with either $0$ or $2$ child nodes for each node 
-- Perfect Binary Tree
-  - A full binary tree
-  - A tree that has height $h$ and $2^h-1$ nodes
+-   Full Binary Tree
+    -   A full binary tree is a binary tree with either $0$ or $2$ child nodes for each node
+-   Perfect Binary Tree
+    -   A full binary tree
+    -   A tree that has height $h$ and $2^h-1$ nodes
 
 ![Perfect Binary Tree](https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/image-20240920105214535.png)
 
@@ -746,10 +744,10 @@ Since the number should be placed in the FULL binary tree, sometimes there will 
 
 In array representation, the tree will has the following properties.
 
- -   Let $n$ be the number of nodes in a tree
-    -   Parent node of $i$ is node $floor(\frac{i}{2})$
-    -   Left child of node $i$ is node $2i$
-    -   Right child of node $i$ is node $2i+1$
+-   Let $n$ be the number of nodes in a tree
+-   Parent node of $i$ is node $floor(\frac{i}{2})$
+-   Left child of node $i$ is node $2i$
+-   Right child of node $i$ is node $2i+1$
 
 ### Linked Representation
 
@@ -1003,10 +1001,10 @@ First, we should know what is min tree and max tree to establish the concept we 
 
 Here I use max heap for example, but it's very similar with the min heap so you can try it by yourself! We're going to use 2 operations called heapify up and heapify down.
 
-- Heapify up
-    - While the new element has a larger value than its parent, swap the new element and its parent
-- Heapify down
-    - While the "out of place element" has a smaller priority than any child, swap the out of place element with the smallest child
+-   Heapify up
+    -   While the new element has a larger value than its parent, swap the new element and its parent
+-   Heapify down
+    -   While the "out of place element" has a smaller priority than any child, swap the out of place element with the smallest child
 
 ### Insert(key)
 
@@ -1597,7 +1595,7 @@ To find a articulation point, we can generate a depth-first search spanning tree
 -   For a non-root vertex $v$
     -   A child of vertex $v$ cannot reach any ancestor of vertex $v$ via other paths, then $v$ is an articulation point
 
-# Minimum Spanning Tree (MST)
+# Minimum Spanning Trees (MST)
 
 ## Intro
 
@@ -1694,133 +1692,329 @@ while (!PQ.isEmpty)
 MST = T
 ```
 
-# Hash Table
+# Hash Tables
 
 ## Intro
 
-- A table to store dictionary pairs
-  - A dictionary pair includes `(key, value)`
-  - Different pair has different key
-- Operations
-  - `Search(key)`
-  - `Insert(key, value)`
-  - `Delete(key)`
-- Expected Time
-  - $O(1)$
+-   A table to store dictionary pairs
+    -   A dictionary pair includes `(key, value)`
+    -   Different pair has different key
+-   Operations
+    -   `Search(key)`
+    -   `Insert(key, value)`
+    -   `Delete(key)`
+-   Expected Time
+    -   $O(1)$
 
 ## Example
 
-Insert the pairs with the following keys to the hash table. *Asus, Canon, Zyxel, Epson, Ericsson, Apple, Dell*
+Insert the pairs with the following keys to the hash table. _Asus, Canon, Zyxel, Epson, Ericsson, Apple, Dell_
 
-- Hash Table `ht`
-  - 26 buckets (26 alphabets)
-  - 2 slots per bucket (like "a" bucket holds 2 pairs, *Asus & Apple*)
-- Hash Function `h(k)`
-  - Map the first character of a key from $0$ to $25$
+-   Hash Table `ht`
+    -   26 buckets (26 alphabets)
+    -   2 slots per bucket (like "a" bucket holds 2 pairs, _Asus & Apple_)
+-   Hash Function `h(k)`
+    -   Map the first character of a key from $0$ to $25$
 
 ![Example](https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/image-20241114152336245.png)
 
 ## Loading Density
 
-- Loading Density
-  - $\alpha=n/sb$
-  - $n$ is number of pairs in the table
-  - $s$ is number of slots per bucket
-  - $b$ is number of buckets
+-   Loading Density
+    -   $\alpha=n/sb$
+    -   $n$ is number of pairs in the table
+    -   $s$ is number of slots per bucket
+    -   $b$ is number of buckets
 
 So in the previous example, we have the loading density $\alpha=7/(2\times26)$.
 
 ## Synonyms
 
-- $2$ keys are **synonyms** if `h(k1)==h(k2)`
-  - In the previous example, *Asus* and *Apple* are synonyms
-- When Inserting Pairs in Previous Example
-  - `Insert(Cisco, 1000)`
-    - The home bucket isn't empty
-    - **Collision**
-  - `Insert(Acer, 1000)`
-    - The home bucket is full
-    - **Overflow**
-  - Collision & Overflow occur simultaneously when each bucket has only $1$ slot
+-   $2$ keys are **synonyms** if `h(k1)==h(k2)`
+    -   In the previous example, _Asus_ and _Apple_ are synonyms
+-   When Inserting Pairs in Previous Example
+    -   `Insert(Cisco, 1000)`
+        -   The home bucket isn't empty
+        -   **Collision**
+    -   `Insert(Acer, 1000)`
+        -   The home bucket is full
+        -   **Overflow**
+    -   Collision & Overflow occur simultaneously when each bucket has only $1$ slot
 
 ## Ideal Hash Functions
 
-- Easy to compute
-- Minimize number of collisions
-- No biased use of hash table
-  - `h(k)` is independently and uniformly at random from $0$ to $b-1$
-  - The probability of a bucket to be selected is $1/b$
+-   Easy to compute
+-   Minimize number of collisions
+-   No biased use of hash table
+    -   `h(k)` is independently and uniformly at random from $0$ to $b-1$
+    -   The probability of a bucket to be selected is $1/b$
 
 ### Hash Functions: Division
 
-- Division
-  - $h(k)=k\pmod D$
-  - Use the remainder
-  - Have at least $D$ buckets in the hash table
-- Example
-  - Inserting pairs $(22,a), (34,c), (3,d), (73,e), (86,f)$
-  - Hash table with $11$ slots, `ht[0:10]`
-  - Hash function: $key\pmod{11}$
+-   Division
+    -   $h(k)=k\pmod D$
+    -   Use the remainder
+    -   Have at least $D$ buckets in the hash table
+-   Example
+    -   Inserting pairs $(22,a), (34,c), (3,d), (73,e), (86,f)$
+    -   Hash table with $11$ slots, `ht[0:10]`
+    -   Hash function: $key\pmod{11}$
 
 ![Example](https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/image-20241114153735564.png)
 
 ### Hash Functions: Folding
 
-- Partition the key into several parts $P_0, P_1, \dots, P_i$ and add all partitions together
-- Shift folding
-  - $h(k)=P_0+P_1+\dots+P_i$
-  - $k = 12320324111220$ and we partition it into $3$ digits long, then $h(k)= 123 + 203 +241 +112 +20 = 699$
-- Folding at the boundaries
-  - Reversing every other partition and then adding
-  - $k=12320324111220$ and we partition it into $3$ digits long, then $h(k) = 123 + 302 +241 +211 +20 = 897$
+-   Partition the key into several parts $P_0, P_1, \dots, P_i$ and add all partitions together
+-   Shift folding
+    -   $h(k)=P_0+P_1+\dots+P_i$
+    -   $k = 12320324111220$ and we partition it into $3$ digits long, then $h(k)= 123 + 203 +241 +112 +20 = 699$
+-   Folding at the boundaries
+    -   Reversing every other partition and then adding
+    -   $k=12320324111220$ and we partition it into $3$ digits long, then $h(k) = 123 + 302 +241 +211 +20 = 897$
 
 ## Overflow Handling
 
 ### Chaining
 
-- A linked list per bucket
-- Each list contains all synonyms
-- Example
-  - Inserting pairs whose keys are $6, 12, 34, 29, 28, 11, 23, 7, 0, 33, 30, 45$
-  - Hash function is $h(key)=key\pmod{17}$
-- Average chain length is $n/b$
+#### Intro
+
+-   A linked list per bucket
+-   Each list contains all synonyms
+-   Example
+    -   Inserting pairs whose keys are $6, 12, 34, 29, 28, 11, 23, 7, 0, 33, 30, 45$
+    -   Hash function is $h(key)=key\pmod{17}$
+-   Average chain length is $n/b$
 
 ![Example](https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/image-20241114155114191.png)
 
+#### Expected Performance
+
+If we have a **chained hash table with uniform hash functions**
+
+-   Average chain length is $\frac{n}{b}$
+    -   $n$ is number of data items in hash table
+    -   $b$ is the number of buckets (number of chains)
+-   $U_n$
+    -   Expected number of key comparisons in an unsuccessful search
+    -   Expected nubmer of keys on a chain
+    -   $U_n=\frac{n}{b}$
+-   $S_n$
+    -   Expected number of key comparisons in a successful search
+    -   When the $i^{th}$ key is being inserted, the expected number of keys in a chain is $\frac{(i-1)}{b}$
+    -   The expected number of comparisons needed to search for $k_i$ is $1+\frac{i-1}{b}$. (Assuming that new entry will be insert)
+    -   Find the $i^{th}$ key, averaged over $1\le i\le n$
+        -   $S_n=\frac{1}{n}\displaystyle\sum^n_{i=1}\{1+\frac{i-1}{b}\}\approx 1+\frac{\alpha}{2}$
+
 ### Open Addressing
 
-- Search the hash table in some systematic fashion for a bucket that is not full
-  - Linear probing (linear open addressing)
-  - Quadratic probing
-  - Rehashing
-  - Random probing
+-   Search the hash table in some systematic fashion for a bucket that is not full
+    -   Linear probing (linear open addressing)
+    -   Quadratic probing
+    -   Rehashing
+    -   Random probing
 
 ### Linear Probing
 
 #### Search
 
-- Search the hash table in the following order
-  - $ht[h(k)\bmod{b}],ht[(h(k)+1)\bmod{b}],\dots,ht[(h(k)+b)\bmod{b}]$
-  - $ht$ is hash table
-  - $h(k)$ is the hash function
-  - $b$ is the number of bucket
+-   Search the hash table in the following order
+    -   $ht[h(k)\bmod{b}],ht[(h(k)+1)\bmod{b}],\dots,ht[(h(k)+b)\bmod{b}]$
+    -   $ht$ is hash table
+    -   $h(k)$ is the hash function
+    -   $b$ is the number of bucket
 
 #### Insert
 
-- The insert terminate when we reach the **first unfilled** bucket
-  - Insert the pair into taht bucket
+-   The insert terminate when we reach the **first unfilled** bucket
+    -   Insert the pair into taht bucket
 
 For example, we have a hash function $key\pmod{17}$ and $b=17$. Insert pairs whose keys are $6, 12, 34, 29, 28, 11, 23, 7, 0, 33, 30, 45$
 
-| Index | 0    | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    | 10   | 11   | 12   | 13   | 14   | 15   | 16   |
-| ----- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| Value | 34   | 0    | 45   |      |      |      | 6    | 23   | 7    |      |      | 28   | 12   | 29   | 11   | 30   | 33   |
+| Index | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7   | 8   | 9   | 10  | 11  | 12  | 13  | 14  | 15  | 16  |
+| ----- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Value | 34  | 0   | 45  |     |     |     | 6   | 23  | 7   |     |     | 28  | 12  | 29  | 11  | 30  | 33  |
 
 #### Delete
 
+In linear probing, we cannot directly delete an element in the hash table. Since if we do that, the corresponding position will be `None`, that way, the search function will return when encounter the `None`, so all the elements after `None` won't be visited. To solve it, we use `Tombstone` to replace the `none`, we put a `Tombstone` in the element place we want to delete, and this is call **lazy deletion**.
 
+#### Expected Performance
 
+-   Loading density of a hash table takes $\alpha = n/b$
 
+    -   $n$ is number of data item in hash table
+    -   $b$ is number of buckets
+
+-   When $n$ is large and $0\le\alpha\le 1$
+
+    -   $U_n$
+        -   Expected number of key comparisons in an unsuccessful search
+        -   $U_n\approx\frac{1}{2}\{1+\frac{1}{(1-\alpha)^2}\}$
+    -   $S_n$
+        -   Expected number of key comparisons in a successful search
+        -   $S_n\approx\frac{1}{2}\{1+\frac{1}{1-\alpha}\}$
+
+-   $\alpha\le0.75$ is recommended
+
+    -   Proven by Knuth, 1962
+
+    -   | $\alpha$ | $S_n$ | $U_n$  |
+        | -------- | ----- | ------ |
+        | $0.50$   | $1.5$ | $2.5$  |
+        | $0.75$   | $2.5$ | $8.5$  |
+        | $0.90$   | $5.5$ | $50.7$ |
+
+### Quadratic probing
+
+In quadratic probing, we search elements in the following order. ($h$ is hash function, $b$ is number of buckets)
+
+$$
+\begin{aligned}
+&ht[h(k) \bmod b],\\
+&ht[(h(k)+1) \bmod b], ht[(h(k)-1) \bmod b],\\
+&ht[(h(k)+2^2) \bmod b], ht[(h(k)-2^2) \bmod b],\\
+&ht[(h(k)+3^2) \bmod b], ht[(h(k)-3^2) \bmod b], \\
+&\vdots \\
+\end{aligned}
+$$
+
+For example, if $h(k)=k\bmod b$, where $b=7$
+
+-   $k = 2$
+    -   $h(k) = 2, \quad\text{Probing sequence is}\quad \{2, 3, 1, 6, 5, 4, 0\}$
+-   $k = 6$
+    -   $h(k) = 6, \quad\text{Probing sequence is} \quad\{6, 0, 5, 3, 2, 1, 4\}$
+-   $k = 19$
+    -   $h(k) = 5, \quad\text{Probing sequence is}\quad \{5, 6, 4, 2, 1, 0, 3\}$
+
+### Rehashing
+
+-   Create a series of hash functions $h_1, h_2, h_3, \dots, h_m$
+-   Examine buckets in the order of $h_1(k), h_2(k), h_3(k), \dots, h_m(k)$
+
+## Perfomances
+
+-   Worst case for find/insert/delete time is $O(n)$, $n$ is the number of pairs in the table
+    -   Open addressing
+        -   This happens when all pairs are in the same cluster
+    -   Chaining
+        -   This happens when all pairs are in the same chain
+
+# Bloom Filters
+
+## Intro
+
+-   When
+    -   Returning **maybe** and **No** are acceptable
+-   What
+    -   Bit array
+    -   Uniform and independent hash functions $f_1, f_2, \dots, f_h$
+-   Limitations
+    -   The naive implementation of the bloom filter doesn’t support the delete operation
+    -   The false positives rate can be reduced but can’t be reduced to zero
+
+## Operations
+
+### Insert(k)
+
+Given $m$ bits of memory $BF$ and $h$ hash functions, then $0\le f_i(k)\le m-1$
+
+-   Initialize all $m$ bits to be $0$
+-   To insert key $k$, set bits $f_1(k), f_2(k), f_3(k),\dots,f_h(k)=1$
+-   So $1$ key will make multiple indices changes
+
+### Member(k, BF)
+
+Search for key $k$
+
+-   **ANY** $BF[f_i(k)]=0$ means $k$ is <u>not</u> in the set
+-   **ALL** $BF[f_i(k)]=1$ means $k$ <u>may be</u> in the set
+
+## Performances
+
+Assume that a bloom filter with
+
+1. $m$ bits of memory
+2. $h$ uniform hashed functions
+3. $u$ elements
+
+Consider the $i^{th}$ bit of the bloom filter
+
+-   Probability to be selected by the $j^{th}$ hash function $f_j(k)$
+    -   $P[f_j(k)=i]=\frac{1}{m}$
+-   Probability of unselected by the $j^{th}$ hash function $f_j(k)$
+    -   $P[f_j(k)\ne i]=1-\frac{1}{m}$
+-   Probability of unselected by any of $h$ hash functions
+    -   $1\le j\le h, P[f_j(k)\ne i]=(1-\frac{1}{m})^h$
+-   After inserting $u$ elements, probability of unselected by any of $h$ hash functions
+    -   $p = (1-\frac{1}{m})^{h\cdot u}$
+-   After inserting $u$ elements, probability that bit $i$ remains $0$
+    -   $p=(1-\frac{1}{m})^{h\cdot u}$
+-   After inserting $u$ elements, probability that bit $i$ is $1$
+    -   $1-p$
+
+Probability of false positives
+
+-   Take a random element $k$ and check $Member(k, BF)$
+-   The probability that all $h$ bits $f_1(k),\dots, f_h(k)$ in $BF$ are $1$
+    -   $f = (1-p)^h$
+
+## Design of Bloom Filters
+
+-   Choose $m$ (filter size in bits)
+    -   Large $m$ to reduce filter error
+-   Pick $h$ (number of hash functions)
+    -   $h$ is too small
+        -   Probability of different keys having same signature is high
+        -   Test more bits for $Member(k, BF)$
+            -   Lower false positive rate
+        -   More bits in $BF$ are $1$
+            -   Higher false positive rate
+    -   $h$ is too large
+        -   The bloom filter fills with ones quickly
+        -   Test less bits for $Member(k, BF)$
+            -   Higher false positive rate
+        -   More bits in $BF$ are $0$
+            -   Lower false positive rate
+-   Select $h$ hash functions
+    -   Hash functions should be relatively independent
+
+Given $m$ bits of memory and $u$ elements, choose $h=\frac{m\ln 2}{u}$
+
+-   Probability that some bit $i$ is $1$
+    -   $p\approx e^{\frac{-h \cdot u}{m}}=\frac{1}{2}$
+-   Expected distribution
+    -   $\frac{1}{2}$ bits are $1$ and vice versa
+-   Probability of false positives
+    -   $f=(1-p)^h\approx(\frac{1}{2})^h=(\frac{1}{2})^{(\ln 2)\frac{m}{u}}\approx 0.6185^{\frac{m}{u}}$
+
+## Minimize The False Positive Rate
+
+Assume that the filter size $m$ and the number of elements in the filter $u$ are fixed, $h$ minimizes false positive rate $f$ if
+
+$$
+h = \frac{(m \ln 2)}{u}
+$$
+
+### Proof 1
+
+![Proof 1](https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/image-20241121225413052.png)
+
+### Proof 2
+
+![Proof 2](https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/image-20241121225441616.png)
+
+# Binomial Heaps
+
+# Leftist vs Binomial Heaps
+
+This is a table of time complexity for different operations.
+
+| Operations          | Leftist Heaps | Actual Binomial Heaps | Amortized Binomial Heaps |
+| ------------------- | ------------- | --------------------- | ------------------------ |
+| Insert              | $O(\log n)$   | $O(1)$                | $O(1)$                   |
+| Delete min (or max) | $O(\log n)$   | $O(n)$                | $O(\log n)$              |
+| Meld                | $O(\log n)$   | $O(1)$                | $O(1)$                   |
 
 # Credits and References
 
