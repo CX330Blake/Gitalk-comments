@@ -348,8 +348,8 @@ sharejs:
 # AddToAny
 # https://www.addtoany.com/
 addtoany:
-    enable: false
-    item: facebook,twitter,line,copy_link
+    enable: true
+    item: facebook,x #,line,copy_link
 
 # Comments System
 # --------------------------------------
