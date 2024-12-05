@@ -1,10 +1,10 @@
 - class_name: About me
   title: About me
-  subtitle: I wanna be a digital nomad 💻
+  subtitle: Just a wannabe hacker 👾
   avatarImg: /assets/me.jpg
   avatarSkills:
       left:
-          - Hacker
+          - Wannabe hacker
           - CTFer
           - Hackstronaut
           - Open sourcer
@@ -14,7 +14,7 @@
           - Poet of Code
           - Vampire
   name: 陳子雋 CX330
-  description: An hacker, developer, and a CTFer.
+  description: An wannebe hacker, developer, and a CTFer.
   aboutsiteTips:
       tips: Philosophy
       title1: Life is short,
