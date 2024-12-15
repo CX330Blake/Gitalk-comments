@@ -3,7 +3,7 @@ title: Reversing.Kr Writeups
 date: 2024-12-07 13:13:42
 cover: https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/ReversingKr.jpg
 categories: CTF
-tags: RE 
+tags: RE
 ---
 
 # Easy Crack
@@ -43,13 +43,32 @@ As you can see from line 11, if the condition here is true, an Incorrect message
 
 # Easy Keygen
 
+```python
+serial_str = "5B134977135E7D13"
 
+serial_hex = [int(serial_str[i : i + 2], 16) for i in range(0, len(serial_str), 2)]
+
+
+print(serial_hex)
+
+
+nums = [16, 32, 48]
+
+v3 = 0
+
+
+name = ""
+
+while v3 < len(serial_hex):
+    name += chr(serial_hex[v3] ^ nums[v3 % 3])
+    v3 += 1
+
+
+print(name)
+```
 
 # Easy Unpack
 
 # Easy ELF
 
 # CSHOP
-
-
-
