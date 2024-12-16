@@ -1302,8 +1302,8 @@ dynamicEffect:
 inject:
     head:
         # Buy me a coffee 按钮
-        # - <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="cx330" data-description="Support me on Buy me a coffee!" data-message="Hackers need COFFEE ☕" data-color="var(--anzhiyu-theme)" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-        - <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="cx330" data-description="Support me on Buy me a coffee!" data-message="" data-color="#BD5FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+        - <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="cx330" data-description="Support me on Buy me a coffee!" data-message="Hackers need COFFEE ☕" data-color="var(--anzhiyu-theme)" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+        # - <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="cx330" data-description="Support me on Buy me a coffee!" data-message="" data-color="#BD5FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
         # 自定义css
         # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
 
