@@ -95,9 +95,9 @@
             cover: https://m.media-amazon.com/images/I/81+0VLwOfIL._AC_UF1000,1000_QL80_.jpg
   like:
       like_tips: Following
-      like_title: Tech news
-      like_bg: https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/technews.jpg
-      like_bottom: CyberSec, CTF, Front end, Back end, AI, Mobile app
+      like_title: Hacking Stuff
+      like_bg: /assets/vxug.jpg # https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/technews.jpg
+      like_bottom: Malware, Pwn, RE, Bug Bounty
   music:
       music_tips: Music
       music_title: Folk, Lo-Fi, Sad Rap, R&B
