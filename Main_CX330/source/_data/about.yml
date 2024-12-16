@@ -13,8 +13,8 @@
           - Programmer
           - Poet of Code
           - Vampire
-  name: 陳子雋 CX330
-  description: An wannebe hacker, developer, and a CTFer.
+  name: CX330 (Blake Chen)
+  description: A wannabe hacker.
   aboutsiteTips:
       tips: Philosophy
       title1: Life is short,
@@ -23,8 +23,8 @@
           - Python
           - Love
           - Dreams
-          - Hope
-          # - Art
+          - Art
+          # - Hope
           # - Travel
   helloAbout: Hello world
   skillsTips:
