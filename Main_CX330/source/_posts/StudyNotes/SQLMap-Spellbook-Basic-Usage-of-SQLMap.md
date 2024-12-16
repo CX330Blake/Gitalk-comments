@@ -17,7 +17,7 @@ This article is mainly intended to serve as my own cheat sheet and notes, but if
 
 I will consistently update the content if I find something missing or something worth to be noted. You can also contact me to update the content. 
 
-# SQL Injection Types
+# Types of SQL Injection
 
 There're 5 types of SQLi vulnerability or 5 ways that SQLMap can test a website.
 
@@ -44,6 +44,10 @@ There're 5 types of SQLi vulnerability or 5 ways that SQLMap can test a website.
 
    - Stacked queries injection allows multiple query in one SQL request.
    - It often uses the "**;**" sign as the seperator to concatenate several queries.
+
+There's also another type of classification from HTB Academy.
+
+![Types of SQLi](https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/types_of_sqli.jpg)
 
 # Magic Spells
 
