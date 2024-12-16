@@ -1,15 +1,16 @@
 ---
-title: "[HTB] Locked Away Writeup 🔒"
-date: 2024-10-11 12:00:53
+title: "[HTB] Locked Away Writeup \U0001F512"
 cover: >-
-    https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/help-you-at-solving-hackthebox-htb-challenges-machines.png
+  https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/help-you-at-solving-hackthebox-htb-challenges-machines.png
 categories:
-    - - HackTheBox
-    - - CTF
+  - - HackTheBox
+  - - CTF
 tags:
-    - HTB
-    - Misc
-    - HackTheBox 
+  - HTB
+  - Misc
+  - HackTheBox
+abbrlink: f9317c8b
+date: 2024-10-11 12:00:53
 ---
 
 # 0x00 Challenge Info

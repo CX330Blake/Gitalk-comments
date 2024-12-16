@@ -1,9 +1,11 @@
 ---
 title: Reversing.Kr Writeups
-date: 2024-12-07 13:13:42
-cover: https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/ReversingKr.jpg
+cover: >-
+  https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/ReversingKr.jpg
 categories: CTF
 tags: RE
+abbrlink: 75ac23f6
+date: 2024-12-07 13:13:42
 ---
 
 # Easy Crack
