@@ -21,6 +21,9 @@
       - name: Python
         color: "#fff"
         icon: https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/643293b1230f7.png
+      - name: Go
+        color: "#fff"
+        icon: https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/go.png
       # - name: Vite
       #   color: "#937df7"
       #   icon: https://npm.elemecdn.com/anzhiyu-blog@2.0.8/img/svg/vite-logo.svg
@@ -30,6 +33,9 @@
       # - name: Vue
       #   color: "#b8f0ae"
       #   icon: https://bu.dusays.com/2023/04/09/643293b6788bd.png
+      - name: Binja
+        color: "#000"
+        icon: https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/Binja.png
       - name: C
         color: "#fff"
         icon: https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/380px-C_Programming_Language.svg.png

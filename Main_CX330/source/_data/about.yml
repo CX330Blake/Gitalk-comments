@@ -6,15 +6,16 @@
       left:
           - Wannabe hacker
           - CTFer
-          - Hackstronaut
+          - Reverser
+          - Red teamer
           - Open sourcer
       right:
           - Developer
-          - Programmer
           - Poet of Code
           - Vampire
+          - Perfectionist
   name: CX330 (Blake Chen)
-  description: A wannabe hacker.
+  description: Send me malware
   aboutsiteTips:
       tips: Philosophy
       title1: Life is short,
