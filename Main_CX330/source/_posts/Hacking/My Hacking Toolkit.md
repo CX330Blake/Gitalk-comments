@@ -63,6 +63,28 @@ if __name__ == '__main__':
 
 ## LFI & RFI
 
+### Dangerous Functions
+
+| **Function**                 | **Read Content** | **Execute** | **Remote URL** |
+| ---------------------------- | ---------------- | ----------- | -------------- |
+| **PHP**                      |                  |             |                |
+| `include()`/`include_once()` | ✅                | ✅           | ✅              |
+| `require()`/`require_once()` | ✅                | ✅           | ❌              |
+| `file_get_contents()`        | ✅                | ❌           | ✅              |
+| `fopen()`/`file()`           | ✅                | ❌           | ❌              |
+| **NodeJS**                   |                  |             |                |
+| `fs.readFile()`              | ✅                | ❌           | ❌              |
+| `fs.sendFile()`              | ✅                | ❌           | ❌              |
+| `res.render()`               | ✅                | ✅           | ❌              |
+| **Java**                     |                  |             |                |
+| `include`                    | ✅                | ❌           | ❌              |
+| `import`                     | ✅                | ✅           | ✅              |
+| **.NET**                     |                  |             |                |
+| `@Html.Partial()`            | ✅                | ❌           | ❌              |
+| `@Html.RemotePartial()`      | ✅                | ❌           | ✅              |
+| `Response.WriteFile()`       | ✅                | ❌           | ❌              |
+| `include`                    | ✅                | ✅           | ✅              |
+
 ### LFI2RCE
 
 -   [Advanced Local File Inclusion to RCE in 2022](https://blog.stevenyu.tw/2022/05/07/advanced-local-file-inclusion-2-rce-in-2022/)
