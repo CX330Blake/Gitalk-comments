@@ -349,7 +349,7 @@ sharejs:
 # https://www.addtoany.com/
 addtoany:
     enable: true
-    item: facebook,x #,line,copy_link
+    item: x,linkedin,facebook,reddit #,line,copy_link
 
 # Comments System
 # --------------------------------------
