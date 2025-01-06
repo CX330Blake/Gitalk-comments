@@ -516,7 +516,7 @@ footer:
               icon: fa-brands fa-x-twitter
     list:
         enable: true
-        randomFriends: 3
+        randomFriends: 0
         project:
             # - title: 服务
             #   links:
@@ -542,22 +542,24 @@ footer:
                     link: /categories/
                   - title: Tags
                     link: /tags/
-            - title: Social center
-              links:
-                  - title: Sites
-                    link: /link/
-                  - title: Message board
-                    link: /comments/
+            # - title: Social center
+            #   links:
+            #       - title: Sites
+            #         link: /link/
+            #       - title: Message board
+            #         link: /comments/
             - title: My
               links:
+                  - title: Resume
+                    link: /assets/Resume.pdf
                   - title: Music bar
                     link: /music/?id=12295857597&server=netease
-                  - title: Talks
-                    link: /essay/
-                  - title: Books
-                    link: /notyet/
-                  - title: Photos
-                    link: /album/
+                  #   - title: Talks
+                  #     link: /essay/
+                  - title: Collections
+                    link: /collect/
+                  #   - title: Photos
+                  # link: /album/
             - title: About
               links:
                   - title: Whoami
