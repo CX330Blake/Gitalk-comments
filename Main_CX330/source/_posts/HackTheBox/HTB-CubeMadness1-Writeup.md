@@ -1,14 +1,14 @@
 ---
-title: '[HTB] CubeMadness1 Writeup'
+title: "[HTB] CubeMadness1 Writeup"
 cover: >-
-  https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/help-you-at-solving-hackthebox-htb-challenges-machines.png
+    https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/help-you-at-solving-hackthebox-htb-challenges-machines.png
 categories:
-  - HackTheBox
-  - CTF
+    - - HackTheBox
+    - - CTF
 tags:
-  - HTB
-  - HackTheBox
-  - GamePwn
+    - HTB
+    - HackTheBox
+    - GamePwn
 abbrlink: bd7b2870
 date: 2024-10-07 10:50:06
 ---
