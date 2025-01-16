@@ -12,7 +12,7 @@ This is the first time I have won a place in a CTF contest. Following are the sc
 
 ![Top 10 Users on Qualified Score Board](https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/image-20250116155552695.png)
 
-![Score over Time](https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/Score over Time.png)
+![Score over Time](https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/Score%20over%20Time.png)
 
 # Web
 
