@@ -1182,7 +1182,7 @@ diytitle:
 
 # 留言弹幕配置
 comment_barrage_config:
-    enable: true
+    enable: false
     # 同时最多显示弹幕数
     maxBarrage: 1
     # 弹幕显示间隔时间ms
