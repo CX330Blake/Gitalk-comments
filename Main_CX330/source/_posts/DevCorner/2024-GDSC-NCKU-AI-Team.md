@@ -2,7 +2,7 @@
 abbrlink: 23950b86
 categories:
 - DevCorner
-cover: ''
+cover: https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/GDSC.jpg
 date: '2024-06-22T03:33:41+08:00'
 description: Sharing the experience of being a member of 2024 GDSC NCKU AI Team.
 mathjax: true
