@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const targetText = element.textContent.trim();
   let currentText = "";
 
+  console.log("Executing the script");
+
   function genCharSet() {
     const chars = [];
     for (let i = 32; i <= 126; i++) {
