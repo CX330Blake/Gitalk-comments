@@ -1,9 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
   const element = document.querySelector(".post-title");
+  if (element) {
+    executeBruteForceEffect(element); // 執行你的動畫
+  }
+};
+
+function executeBruteForceEffect(element) {
   const targetText = element.textContent.trim();
   let currentText = "";
-
-  console.log("Executing the script");
 
   function genCharSet() {
     const chars = [];
@@ -14,11 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const characters = genCharSet();
-
-  // 設置動畫總時長（毫秒）
-  const totalDuration = 5000; // 5秒
-  const totalFrames = targetText.length * characters.length; // 總帧數
-  const frameDuration = totalDuration / totalFrames; // 每帧的時長
+  const totalDuration = 5000; // 動畫總時長
+  const totalFrames = targetText.length * characters.length;
+  const frameDuration = totalDuration / totalFrames;
 
   function bruteForceEffect(index = 0, currentCharIndex = 0) {
     if (index >= targetText.length) {
@@ -27,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const targetChar = targetText[index];
-    // Animation
     element.textContent =
       currentText +
       characters[currentCharIndex] +
@@ -43,6 +44,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   bruteForceEffect();
-
-  console.log("Finish brute forcing!!!");
-});
+}
