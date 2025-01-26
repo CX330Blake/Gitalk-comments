@@ -17,7 +17,7 @@
     "hexo-abbrlink": "^2.2.1",
     "hexo-algoliasearch": "^2.0.1",
     "hexo-all-minifier": "^0.5.7",
-    "hexo-butterfly-charts-en": "^1.0.0",
+    "hexo-butterfly-charts-en": "^1.0.1",
     "hexo-butterfly-envelope": "^1.0.15",
     "hexo-deployer-git": "^4.0.0",
     "hexo-generator-archive": "^2.0.0",

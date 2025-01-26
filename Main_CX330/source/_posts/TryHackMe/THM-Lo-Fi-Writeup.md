@@ -1,9 +1,11 @@
 ---
-title: "[THM] Lo-Fi Writeup"
-date: 2025-01-22 10:34:38
-cover: https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/TryHackMe.jpg
+title: '[THM] Lo-Fi Writeup'
+cover: >-
+  https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/TryHackMe.jpg
 categories: TryHackMe
-tags: Web 
+tags: Web
+abbrlink: a4ff99c7
+date: 2025-01-22 10:34:38
 ---
 
 # 0x00 Challenge Info

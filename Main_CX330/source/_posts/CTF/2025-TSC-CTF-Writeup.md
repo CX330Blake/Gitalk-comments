@@ -1,9 +1,11 @@
 ---
 title: 2025 TSC CTF Writeup
-date: 2025-01-16 15:37:39
-cover: https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/Blog_cover%20(18).jpg
+cover: >-
+  https://raw.githubusercontent.com/CX330Blake/MyBlogPhotos/main/image/Blog_cover%20(18).jpg
 categories: CTF
-tags: 
+abbrlink: d6514c21
+date: 2025-01-16 15:37:39
+tags:
 ---
 
 # Prologue
