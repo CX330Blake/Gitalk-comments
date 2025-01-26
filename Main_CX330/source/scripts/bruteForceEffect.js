@@ -1,16 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-  function initObserver() {
-    const element = document.querySelector(".post-title");
-    if (element) {
-      executeBruteForceEffect(element);
-    }
+$(document).on("pjax:success", function (event, data, status, xhr, options) {
+  const element = document.querySelector(".post-title");
+  if (element) {
+    executeBruteForceEffect(element); // 執行動畫
   }
+});
 
-  // 初始化時執行
-  initObserver();
-
-  // 監聽 Pjax 成功事件
-  document.addEventListener("pjax:success", initObserver);
+// 初始化時執行一次
+$(document).ready(function () {
+  const element = document.querySelector(".post-title");
+  if (element) {
+    executeBruteForceEffect(element);
+  }
 });
 
 function executeBruteForceEffect(element) {
