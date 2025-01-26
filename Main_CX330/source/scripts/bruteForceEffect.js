@@ -1,9 +1,9 @@
-window.onload = () => {
+window.addEventListener("popstate", () => {
   const element = document.querySelector(".post-title");
   if (element) {
     executeBruteForceEffect(element); // 執行你的動畫
   }
-};
+});
 
 function executeBruteForceEffect(element) {
   const targetText = element.textContent.trim();
