@@ -1,9 +1,14 @@
-window.addEventListener("popstate", () => {
+const { truncate } = require("hexo/dist/plugins/helper/format");
+
+const observer = new MutationObserver(() => {
   const element = document.querySelector(".post-title");
   if (element) {
-    executeBruteForceEffect(element); // 執行你的動畫
+    observer.disconnect();
+    executeBruteForceEffect(elemen);
   }
 });
+
+observer.observe(document.body, { childList: true, subtree: true });
 
 function executeBruteForceEffect(element) {
   const targetText = element.textContent.trim();
