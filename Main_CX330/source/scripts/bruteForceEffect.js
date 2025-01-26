@@ -1,5 +1,3 @@
-const { truncate } = require("hexo/dist/plugins/helper/format");
-
 const observer = new MutationObserver(() => {
   const element = document.querySelector(".post-title");
   if (element) {
