@@ -38,4 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   bruteForceEffect();
+
+  console.log("Finish brute forcing!!!");
 });
