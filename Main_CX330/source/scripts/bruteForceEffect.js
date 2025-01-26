@@ -14,7 +14,7 @@
 function executeBruteForceEffect(element) {
   const targetText = element.textContent.trim(); // 目標文本
   let currentText = ""; // 當前顯示文本
-  const totalDuration = 5000; // 總動畫時長（毫秒）
+  const totalDuration = 3000; // 總動畫時長（毫秒）
   const frameDuration = 50; // 每幀的時間間隔（毫秒）
 
   function genRandomChar() {
@@ -38,13 +38,13 @@ function executeBruteForceEffect(element) {
       if (animationFrame >= maxFrames) {
         // 結束動畫，顯示正確字符
         currentText += targetText[index];
-        element.textContent = currentText + "_";
+        element.textContent = currentText + "|";
         setTimeout(() => animate(index + 1), frameDuration); // 開始下一個字符
         return;
       }
 
       // 顯示當前隨機字符動畫
-      element.textContent = currentText + genRandomChar() + "_";
+      element.textContent = currentText + genRandomChar() + "|";
       animationFrame++;
       setTimeout(animateChar, frameDuration); // 下一幀動畫
     }
