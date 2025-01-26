@@ -15,6 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const characters = genCharSet();
 
+  // 設置動畫總時長（毫秒）
+  const totalDuration = 5000; // 5秒
+  const totalFrames = targetText.length * characters.length; // 總帧數
+  const frameDuration = totalDuration / totalFrames; // 每帧的時長
+
   function bruteForceEffect(index = 0, currentCharIndex = 0) {
     if (index >= targetText.length) {
       element.textContent = targetText;
@@ -30,10 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (characters[currentCharIndex] === targetChar) {
       currentText += targetChar;
-      bruteForceEffect(index + 1);
+      setTimeout(() => bruteForceEffect(index + 1), frameDuration);
     } else {
       const nextCharIndex = (currentCharIndex + 1) % characters.length;
-      requestAnimationFrame(() => bruteForceEffect(index, nextCharIndex));
+      setTimeout(() => bruteForceEffect(index, nextCharIndex), frameDuration);
     }
   }
 
