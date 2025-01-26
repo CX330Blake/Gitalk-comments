@@ -1,12 +1,17 @@
-const observer = new MutationObserver(() => {
-  const element = document.querySelector(".post-title");
-  if (element) {
-    observer.disconnect();
-    executeBruteForceEffect(element);
+document.addEventListener("DOMContentLoaded", () => {
+  function initObserver() {
+    const element = document.querySelector(".post-title");
+    if (element) {
+      executeBruteForceEffect(element);
+    }
   }
-});
 
-observer.observe(document.body, { childList: true, subtree: true });
+  // 初始化時執行
+  initObserver();
+
+  // 監聽 Pjax 成功事件
+  document.addEventListener("pjax:success", initObserver);
+});
 
 function executeBruteForceEffect(element) {
   const targetText = element.textContent.trim();
