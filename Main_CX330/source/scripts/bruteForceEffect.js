@@ -36,4 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       requestAnimationFrame(() => bruteForceEffect(index, nextCharIndex));
     }
   }
+
+  bruteForceEffect();
 });
