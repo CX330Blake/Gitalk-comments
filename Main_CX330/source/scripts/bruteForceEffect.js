@@ -2,7 +2,7 @@ const observer = new MutationObserver(() => {
   const element = document.querySelector(".post-title");
   if (element) {
     observer.disconnect();
-    executeBruteForceEffect(elemen);
+    executeBruteForceEffect(element);
   }
 });
 
