@@ -1,17 +1,17 @@
-$(document).on("pjax:success", function (event, data, status, xhr, options) {
-  const element = document.querySelector(".post-title");
-  if (element) {
-    executeBruteForceEffect(element); // 執行動畫
-  }
-});
+(function (history) {
+  var pushState = history.pushState;
+  history.pushState = function (state) {
+    // YOUR CUSTOM HOOK / FUNCTION
+    var element = document.querySelector(".post-title");
 
-// 初始化時執行一次
-$(document).ready(function () {
-  const element = document.querySelector(".post-title");
-  if (element) {
-    executeBruteForceEffect(element);
-  }
-});
+    if (element) {
+      executeBruteForceEffect(element);
+    }
+
+    console.log("URL Changed");
+    return pushState.apply(history, arguments);
+  };
+})(window.history);
 
 function executeBruteForceEffect(element) {
   const targetText = element.textContent.trim();
@@ -26,7 +26,7 @@ function executeBruteForceEffect(element) {
   }
 
   const characters = genCharSet();
-  const totalDuration = 5000; // 動畫總時長
+  const totalDuration = 1000;
   const totalFrames = targetText.length * characters.length;
   const frameDuration = totalDuration / totalFrames;
 
