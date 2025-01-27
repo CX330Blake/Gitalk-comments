@@ -11,6 +11,13 @@
   };
 })(window.history);
 
+window.onload = () => {
+  const element = document.querySelector(".post-title");
+  if (element) {
+    executeBruteForceEffect(element);
+  }
+};
+
 function executeBruteForceEffect(element) {
   const targetText = element.textContent.trim(); // 目標文本
   let currentText = ""; // 當前顯示文本
