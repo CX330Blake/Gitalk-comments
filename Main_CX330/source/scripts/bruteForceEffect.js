@@ -21,7 +21,7 @@ window.onload = () => {
 function executeBruteForceEffect(element) {
   const targetText = element.textContent.trim(); // 目標文本
   let currentText = ""; // 當前顯示文本
-  const totalDuration = 3000; // 總動畫時長（毫秒）
+  const totalDuration = 2000; // 總動畫時長（毫秒）
   const frameDuration = 50; // 每幀的時間間隔（毫秒）
 
   function genRandomChar() {
