@@ -1,56 +1,75 @@
-// Listen to URL changes
+// 監聽 URL 變化
 (function (history) {
-  const originalPushState = history.pushState;
+    const originalPushState = history.pushState;
 
-  history.pushState = function (state) {
-    const element = document.querySelector(".post-title");
-    if (element) {
-      executeBruteForceEffect(element);
-    }
-    console.log("URL changed");
-    return originalPushState.apply(history, arguments);
-  };
+    history.pushState = function (state) {
+        const element = document.querySelector(".post-title");
+        if (element) {
+            executeBruteForceEffect(element);
+        }
+        console.log("URL Changed");
+        return originalPushState.apply(history, arguments);
+    };
 })(window.history);
 
 window.onload = () => {
-  const element = document.querySelector(".post-title");
-  if (element) {
-    executeBruteForceEffect(element);
-  }
+    const element = document.querySelector(".post-title");
+    if (element) {
+        executeBruteForceEffect(element, () => {
+            console.log("Finished animation");
+        });
+    }
 };
 
-function executeBruteForceEffect(element) {
-  const targetText = element.textContent.trim();
-  const totalDuration = 4000; // ms
-  const frameDuration = 50;
-  const totalFrame = Math.floor(totalDuration / frameDuration);
-  let currentFrame = 0;
+let isAnimating = false;
 
-  function getRandomChar() {
-    const chars =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:',.<>?";
-    return chars[Math.floor(Math.random() * chars.length)];
-  }
+function executeBruteForceEffect(element, callback) {
+    if (isAnimating) return;
+    isAnimating = true;
 
-  function animate() {
-    if (currentFrame >= totalFrame) {
-      element.textContent = targetText;
-      return;
+    const targetText = element.textContent.trim();
+    const totalDuration = 4000; // ms
+    const frameDuration = 50;
+    const steps = Math.floor(totalDuration / 200);
+    const totalFrames = Math.floor(totalDuration / frameDuration);
+    let currentFrame = 0;
+    let displayArray = Array(targetText.length).fill("");
+    let locks = Array(targetText.length).fill(false);
+
+    function genRandomChar() {
+        const chars =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:',.<>?";
+        return chars[Math.floor(Math.random() * chars.length)];
     }
 
-    let displayText = "";
-    for (let i = 0; i < targetText.length; i++) {
-      if (Math.random() < currentFrame / totalFrames) {
-        // Randomly decide whether to display the target character (more and more characters will be fixed as the animation progresses)
-        displayText += targetText[i];
-      } else {
-        displayText += genRandomChar();
-      }
-    }
-    element.textContent = displayText; // + "█";
-    currentFrame++;
-    setTimeout(animate, frameDuration);
-  }
+    function animate() {
+        if (currentFrame >= totalFrames) {
+            element.textContent = targetText; // Final text
+            isAnimating = false;
+            if (callback) callback();
+            return;
+        }
 
-  animate();
+        // Random unlock chars
+        for (let i = 0; i < targetText.length; i++) {
+            if (!locks[i]) {
+                displayArray[i] = genRandomChar();
+            }
+        }
+
+        // Count which char to lock
+        let charIndexToLock = Math.floor(
+            (currentFrame / totalFrames) * targetText.length
+        );
+        if (charIndexToLock < targetText.length && !locks[charIndexToLock]) {
+            locks[charIndexToLock] = true;
+            displayArray[charIndexToLock] = targetText[charIndexToLock];
+        }
+
+        element.textContent = displayArray.join(""); // + "█"; // Vim like cursor
+        currentFrame++;
+        requestAnimationFrame(animate);
+    }
+
+    animate(); // Start
 }
