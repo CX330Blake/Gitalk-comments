@@ -21,7 +21,7 @@ window.onload = () => {
 
 function executeBruteForceEffect(element) {
   const targetText = element.textContent.trim();
-  const totalDuration = 2000; // ms
+  const totalDuration = 4000; // ms
   const frameDuration = 50;
   const totalFrame = Math.floor(totalDuration / frameDuration);
   let currentFrame = 0;
@@ -47,7 +47,7 @@ function executeBruteForceEffect(element) {
         displayText += genRandomChar();
       }
     }
-    element.textContent = displayText + "█";
+    element.textContent = displayText; // + "█";
     currentFrame++;
     setTimeout(animate, frameDuration);
   }
